@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios - Total-Clean STORE</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <button class="sidebar-toggle">☰</button>
+        <h1 onclick="window.location.href='../index.html'">Total-Clean STORE</h1>
+        <a href="cart.html" class="cart-button">🛒</a>
+    </header>
+    <aside id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <li><a href="about.html">Acerca de nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="cart.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="hero accessories-hero">
+        <div class="product-info">
+            <h2>🔧 Accesorios Premium</h2>
+            <p>Potencia al máximo tus productos Total-Clean con accesorios diseñados para durar y facilitar tu rutina de limpieza.</p>
+            <div class="accessory-highlights">
+                <div class="highlight-item">
+                    <span class="highlight-icon">🔄</span>
+                    <h4>Cabezales Intercambiables</h4>
+                    <p>Adapta tu herramienta a cualquier superficie</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">🛡️</span>
+                    <h4>Protección Total</h4>
+                    <p>Fundas y protectores de alta resistencia</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">⚙️</span>
+                    <h4>Herramientas Pro</h4>
+                    <p>Accesorios para limpieza profesional</p>
+                </div>
+            </div>
+            <button class="cta-button accessories-btn" onclick="scrollToAccessories()">Ver Todos los Accesorios</button>
+        </div>
+        <div class="accessory-showcase">
+            <img src="../Recursos/funda.jpg" alt="Accesorios" class="product-image main-accessory">
+            <div class="floating-elements">
+                <div class="floating-item" style="top: 20%; left: 10%;">🧽</div>
+                <div class="floating-item" style="top: 60%; right: 15%;">🧴</div>
+                <div class="floating-item" style="bottom: 20%; left: 20%;">🧼</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accessories-section" class="accessories">
+        <h2>Accesorios Disponibles</h2>
+        <div class="accessory-grid">
+            <div class="accessory-item" data-accessory="case">
+                <img src="../Recursos/rastrillo.jpeg" alt="Cabezal de Rastrillo" class="accessory-item img">
+                <h3>Cabezal de Rastrillo</h3>
+                <p>$49.99 mxn</p>
+                <button class="add-to-cart-btn" onclick="addAccessoryToCart('Cabezal de Rastrillo', 49.99, '../Recursos/rastrillo.jpeg')">Agregar al Carrito</button>
+            </div>
+            <div class="accessory-item" data-accessory="charger">
+               <img src="../Recursos/rodillo.jpeg" alt="Cabezal de Rodillo" class="accessory-item img">
+                <h3>Cabezal de Rodillo</h3>
+                <p>$49.99 mxn</p>
+                <button class="add-to-cart-btn" onclick="addAccessoryToCart('Cabezal de Rodillo', 49.99, '../Recursos/rodillo.jpeg')">Agregar al Carrito</button>
+            </div>
+            <div class="accessory-item" data-accessory="screen">
+                <img src="../Recursos/cepillo.jpg" alt="Cabezal de Cepillo" class="accessory-item img">
+                <h3>Cabezal de Cepillo</h3>
+                <p>$49.99 mxn</p>
+                <button class="add-to-cart-btn" onclick="addAccessoryToCart('Cabezal de Cepillo', 49.99, '../Recursos/cepillo.jpg')">Agregar al Carrito</button>
+            </div>
+              <div class="accessory-item" data-accessory="earbuds">
+                <img src="../Recursos/funda.jpg" alt="Funda Protectora" class="accessory-item img">
+                <h3>Funda de Piel Sintetica</h3>
+                <p>$49.99 mxn</p>
+                <button class="add-to-cart-btn" onclick="addAccessoryToCart('Funda de Piel Sintetica', 49.99, '../Recursos/funda.jpg')">Agregar al Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🧹 Total-Clean</h3>
+                <p>Tu aliado en limpieza inteligente. Productos innovadores para un hogar impecable.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soporte</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Tu email" id="newsletter-email">
+                    <button onclick="subscribeNewsletter()">Suscribirse 🎉</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Total-Clean STORE. Todos los derechos reservados. | Made with ❤️ for clean homes</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addAccessoryToCart(name, price, image) {
+            const product = {
+                name: name,
+                price: price,
+                image: image
+            };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Accesorio agregado al carrito!');
+        }
+
+        // Simple sidebar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const sidebar = document.getElementById('sidebar');
+
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sidebar.classList.add('open');
+                    console.log('Sidebar opened');
+                });
+            }
+
+            if (sidebarClose && sidebar) {
+                sidebarClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sidebar.classList.remove('open');
+                    console.log('Sidebar closed');
+                });
+            }
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(e) {
+                if (sidebar && sidebar.classList.contains('open')) {
+                    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                        sidebar.classList.remove('open');
+                        console.log('Sidebar closed by outside click');
+                    }
+                }
+            });
+        });
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert('¡Gracias por suscribirte! 🎉');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Por favor ingresa tu email');
+            }
+        }
+
+        function scrollToAccessories() {
+            const accessoriesSection = document.getElementById('accessories-section');
+            accessoriesSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        document.querySelectorAll('.accessory-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.add('animate');
+                setTimeout(() => {
+                    item.classList.remove('animate');
+                }, 1000);
+            });
+        });
+        document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('open');
+        });
+        document.querySelector('.sidebar-close').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.remove('open');
+        });
+    </script>
+</body>
+</html>
