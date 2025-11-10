@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de nosotros - Total-Clean STORE</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <button class="sidebar-toggle">☰</button>
+        <h1 onclick="window.location.href='../index.html'">Total-Clean STORE</h1>
+        <a href="cart.html" class="cart-button">🛒</a>
+    </header>
+    <aside id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <li><a href="about.html">Acerca de nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="cart.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="hero about-hero">
+        <div class="product-info">
+            <h2>🏢 Nuestra Historia</h2>
+            <p>Fundada en 2020, Total-Clean STORE nació de la pasión por crear productos de limpieza que realmente funcionen. Comenzamos como un pequeño taller familiar y hoy somos líderes en innovación de limpieza.</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Clientes Satisfechos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Productos Innovadores</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5</h3>
+                    <p>Años de Experiencia</p>
+                </div>
+            </div>
+            <button class="cta-button about-btn" onclick="showMissionModal()">Nuestra Misión</button>
+        </div>
+        <img src="../Recursos/escoba.jpg" alt="Nuestra historia" class="product-image about-image">
+    </section>
+
+    <section class="accessories about-team">
+        <h2>👥 Nuestro Equipo</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-avatars">
+                    <div class="member-avatar">
+                        <img src="../Recursos/anonimo.jpg" alt="Fundador 1">
+                    </div>
+                    <div class="member-avatar">
+                        <img src="../Recursos/anonimo.jpg" alt="Fundador 2">
+                    </div>
+                </div>
+                <h3>Aixa Lizania & Ricardo Ottmar</h3>
+                <p class="member-role">Fundadores & CEO</p>
+                <p class="member-desc">Visionarios detrás de Total-Clean, con más de 5 años creando soluciones innovadoras juntos.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar single-avatar">
+                    <img src="../Recursos/Mario.jpg" alt="Desarrollo">
+                </div>
+                <h3>Equipo Técnico</h3>
+                <p class="member-role">Ingeniero & Desarrolador web</p>
+                <p class="member-desc">Experto en crear software inovador</p>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar single-avatar">
+                    <img src="../Recursos/anonimo.jpg" alt="Soporte">
+                </div>
+                <h3>Soporte al Cliente</h3>
+                <p class="member-role">Atención 24/7</p>
+                <p class="member-desc">Siempre listo para ayudarte con cualquier consulta o problema.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar single-avatar">
+                    <img src="../Recursos/anonimo.jpg" alt="Marketing">
+                </div>
+                <h3>Equipo Creativo</h3>
+                <p class="member-role">Marketing & Innovación</p>
+                <p class="member-desc">Encargada de llevar nuestras ideas al mundo de manera atractiva.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Modal -->
+    <div id="mission-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🌟 Nuestra Visión</h2>
+            </div>
+            <div class="modal-body">
+                <p>Ser la empresa líder en soluciones de limpieza innovadoras a nivel nacional, reconocida por nuestra calidad, innovación y compromiso con el medio ambiente. Aspiramos a revolucionar la industria de la limpieza con productos que no solo sean efectivos, sino también sostenibles y accesibles para todos los hogares y empresas de México.</p>
+                <p>Creemos en un futuro donde la limpieza sea inteligente, eficiente y respetuosa con nuestro planeta. Nuestro objetivo es crear productos que faciliten la vida diaria de las personas mientras contribuimos activamente a la preservación del medio ambiente.</p>
+                <p><strong>Valores que nos guían:</strong></p>
+                <ul>
+                    <li>🌱 <strong>Sostenibilidad:</strong> Compromiso con el medio ambiente</li>
+                    <li>💡 <strong>Innovación:</strong> Tecnología avanzada en cada producto</li>
+                    <li>🤝 <strong>Calidad:</strong> Excelencia en todos nuestros procesos</li>
+                    <li>❤️ <strong>Pasión:</strong> Amor por lo que hacemos</li>
+                </ul>
+            </div>
+            <button class="modal-close-btn" onclick="closeMissionModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🧹 Total-Clean</h3>
+                <p>Tu aliado en limpieza inteligente. Productos innovadores para un hogar impecable.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soporte</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Tu email" id="newsletter-email">
+                    <button onclick="subscribeNewsletter()">Suscribirse 🎉</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Total-Clean STORE. Todos los derechos reservados. | Made with ❤️ for clean homes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple sidebar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const sidebar = document.getElementById('sidebar');
+
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sidebar.classList.add('open');
+                    console.log('Sidebar opened');
+                });
+            }
+
+            if (sidebarClose && sidebar) {
+                sidebarClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sidebar.classList.remove('open');
+                    console.log('Sidebar closed');
+                });
+            }
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(e) {
+                if (sidebar && sidebar.classList.contains('open')) {
+                    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                        sidebar.classList.remove('open');
+                        console.log('Sidebar closed by outside click');
+                    }
+                }
+            });
+        });
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert('¡Gracias por suscribirte! 🎉');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Por favor ingresa tu email');
+            }
+        }
+
+        function showMissionModal() {
+            const modal = document.getElementById('mission-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMissionModal() {
+            const modal = document.getElementById('mission-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('mission-modal');
+            if (e.target === modal) {
+                closeMissionModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMissionModal();
+            }
+        });
+
+        document.querySelectorAll('.accessory-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.add('animate');
+                setTimeout(() => {
+                    item.classList.remove('animate');
+                }, 1000);
+            });
+        });
+        document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('open');
+        });
+        document.querySelector('.sidebar-close').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.remove('open');
+        });
+    </script>
+</body>
+</html>

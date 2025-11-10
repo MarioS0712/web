@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Total-Clean STORE</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <button class="sidebar-toggle">☰</button>
+        <h1 onclick="window.location.href='../index.html'">Total-Clean STORE</h1>
+        <a href="cart.html" class="cart-button">🛒</a>
+    </header>
+    <aside id="sidebar" class="sidebar">
+        <button id="sidebar-close" class="sidebar-close">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <li><a href="about.html">Acerca de nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="cart.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="hero cart-hero">
+        <div class="product-info">
+            <h2>🛒 Tu Carrito de Compras</h2>
+            <div id="cart-empty" class="cart-empty-state">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Tu carrito está vacío</h3>
+                <p>¡Descubre nuestros productos y comienza a comprar!</p>
+                <button class="cta-button" onclick="window.location.href='../index.html'">Explorar Productos</button>
+            </div>
+            <div id="cart-items" style="display: none;">
+                <div class="cart-summary">
+                    <h3>Resumen de Compra</h3>
+                    <div id="cart-list" class="cart-items-list"></div>
+                    <div class="cart-total-section">
+                        <div id="cart-total" class="cart-total"></div>
+                        <button class="cta-button checkout-btn" onclick="checkout()">Proceder al Pago 💳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-visual">
+            <img src="../Recursos/funda.jpg" alt="Carrito" class="product-image cart-image">
+            <div class="cart-animation">
+                <div class="cart-item-floating">🧽</div>
+                <div class="cart-item-floating">🧴</div>
+                <div class="cart-item-floating">🧹</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🧹 Total-Clean</h3>
+                <p>Tu aliado en limpieza inteligente. Productos innovadores para un hogar impecable.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soporte</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="Tu email" id="newsletter-email">
+                    <button onclick="subscribeNewsletter()">Suscribirse 🎉</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Total-Clean STORE. Todos los derechos reservados. | Made with ❤️ for clean homes</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+        function updateCartDisplay() {
+            const cartEmpty = document.getElementById('cart-empty');
+            const cartItems = document.getElementById('cart-items');
+            const cartList = document.getElementById('cart-list');
+            const cartTotal = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartItems.style.display = 'none';
+                return;
+            }
+
+            cartEmpty.style.display = 'none';
+            cartItems.style.display = 'block';
+
+            let total = 0;
+            cartList.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <img src="../${item.image}" alt="${item.name}" style="width: 50px; height: 50px; margin-right: 1rem;">
+                    <div>
+                        <h4>${item.name}</h4>
+                        <p>$${item.price} mxn</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})" style="background: #e74c3c; color: white; border: none; padding: 0.5rem; border-radius: 5px; cursor: pointer;">Eliminar</button>
+                `;
+                cartList.appendChild(itemDiv);
+            });
+
+            cartTotal.innerHTML = `<strong>Total: $${total} mxn</strong>`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function checkout() {
+            alert('¡Gracias por tu compra! Procesando pago...');
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        document.querySelector('.sidebar-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('open');
+        });
+        document.querySelector('.sidebar-close').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.remove('open');
+        });
+
+        // Simple sidebar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const sidebar = document.getElementById('sidebar');
+
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sidebar.classList.add('open');
+                    console.log('Sidebar opened');
+                });
+            }
+
+            if (sidebarClose && sidebar) {
+                sidebarClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    sidebar.classList.remove('open');
+                    console.log('Sidebar closed');
+                });
+            }
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', function(e) {
+                if (sidebar && sidebar.classList.contains('open')) {
+                    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                        sidebar.classList.remove('open');
+                        console.log('Sidebar closed by outside click');
+                    }
+                }
+            });
+        });
+
+        // Initialize cart display
+        updateCartDisplay();
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert('¡Gracias por suscribirte! 🎉');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                alert('Por favor ingresa tu email');
+            }
+        }
+    </script>
+</body>
+</html>
