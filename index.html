@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total-Clean</title>
+    <title>Total-Clean STORE</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
                 <li>Cabezal de Trapeador</li>
                 <li>Cabezal de Rastrillo</li>
             </ul>
-            <button class="cta-button" onclick="addMainProductToCart()">Comprar Ahora</button>
+            <button class="cta-button" onclick="addMainProductToCart(event)">Comprar Ahora</button>
         </div>
     </section>
 
@@ -119,7 +119,7 @@
 
         function addMainProductToCart() {
             const product = {
-                name: 'T-Brum Aspiradora',
+                name: 'T-Brum Escoba',
                 price: 320,
                 image: 'Recursos/escoba.jpg'
             };
@@ -242,5 +242,4 @@
         });
     </script>
 </body>
-
 </html>
